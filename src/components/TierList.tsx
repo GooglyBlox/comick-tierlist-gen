@@ -181,7 +181,7 @@ export default function TierList() {
     
     try {
       const canvas = await html2canvas(tierListRef.current, {
-        backgroundColor: '#ffffff',
+        backgroundColor: null,
         scale: 2,
         useCORS: true,
         allowTaint: true,
