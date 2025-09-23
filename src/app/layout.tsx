@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Comick.io Tier List Generator',
-  description: 'Create tier lists from your Comick.io reading list',
+  title: 'Comick.dev Tier List Generator',
+  description: 'Create tier lists from your Comick.dev reading list',
   authors: [{ name: 'GooglyBlox' }],
 };
 

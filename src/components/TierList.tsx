@@ -64,7 +64,7 @@ export default function TierList() {
     try {
       const userId = extractUserIdFromUrl(comickUrl);
       if (!userId) {
-        throw new Error('Invalid Comick.io URL. Please use a valid user profile URL like: https://comick.io/user/[user-id]/list');
+        throw new Error('Invalid Comick.dev URL. Please use a valid user profile URL like: https://comick.dev/user/[user-id]/list');
       }
 
       const response = await fetch('/api/comick', {
@@ -225,7 +225,7 @@ export default function TierList() {
           <div className="max-w-7xl mx-auto px-4 py-6">
             <div className="text-center mb-6">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                Comick.io Tier List Generator
+                Comick.dev Tier List Generator
               </h1>
             </div>
             
@@ -234,7 +234,7 @@ export default function TierList() {
                 type="text"
                 value={comickUrl}
                 onChange={(e) => setComickUrl(e.target.value)}
-                placeholder="https://comick.io/user/[user-id]/list"
+                placeholder="https://comick.dev/user/[user-id]/list"
                 className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
               />
               <div className="flex gap-3">

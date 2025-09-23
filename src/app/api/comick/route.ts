@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Comic } from "@/types";
 
+export const runtime = 'edge';
+
 interface ComickManga {
   created_at: string;
   read_at: string | null;
@@ -55,13 +57,13 @@ export async function POST(request: NextRequest) {
 
     console.log("Fetching follows for user:", userId);
 
-    const pageResponse = await fetch(`https://comick.io/user/${userId}/list`, {
+    const pageResponse = await fetch(`https://comick.dev/user/${userId}/list`, {
       headers: {
         'sec-ch-ua': '"Opera GX";v="109", "Not:A-Brand";v="8", "Chromium";v="123"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'upgrade-insecure-requests': '1',
-        'Referer': 'https://comick.io/home',
+        'Referer': 'https://comick.dev/home',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
       },
       method: 'GET',
@@ -79,7 +81,7 @@ export async function POST(request: NextRequest) {
     }
     
     const buildId = buildIdMatch[1];
-    const jsonUrl = `https://comick.io/_next/data/${buildId}/user/${userId}/list.json?id=${userId}`;
+    const jsonUrl = `https://comick.dev/_next/data/${buildId}/user/${userId}/list.json?id=${userId}`;
 
     console.log("Fetching data from:", jsonUrl);
 
@@ -89,7 +91,7 @@ export async function POST(request: NextRequest) {
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
         'upgrade-insecure-requests': '1',
-        'Referer': 'https://comick.io/home',
+        'Referer': 'https://comick.dev/home',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
       },
       method: 'GET',
