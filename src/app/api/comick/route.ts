@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Comic } from "@/types";
 
+export const runtime = 'edge';
+
 interface ComickManga {
   created_at: string;
   read_at: string | null;
